@@ -185,8 +185,8 @@
                 <span class="subscriber-count">1200+ Active Subscribers</span>
             </div>
 
-            <!-- Subscribe Button -->
-            <a href="https://t.me/Ayeshafxqueen" target="_blank" class="subscribe-btn">
+            <!-- Subscribe Button (With Click Tracker) -->
+            <a href="https://t.me/Ayeshafxqueen" target="_blank" class="subscribe-btn" id="telegram-subscribe-link">
                 <span>Join Telegram Channel</span>
                 <span style="font-size: 1.6rem;">→</span>
             </a>
@@ -201,6 +201,16 @@
             © 2026 Ayesha Gold Trader • All Rights Reserved
         </div>
     </div>
+
+    <!-- Custom Event Script -->
+    <script>
+        document.getElementById('telegram-subscribe-link').addEventListener('click', function() {
+            // Manually triggers the standard "Subscribe" event in Meta Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Subscribe');
+            }
+        });
+    </script>
 
 </body>
 </html>
